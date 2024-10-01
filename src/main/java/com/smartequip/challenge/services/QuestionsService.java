@@ -1,6 +1,6 @@
 package com.smartequip.challenge.services;
 
-import com.smartequip.challenge.inbound.QuestionRequest;
+import com.smartequip.challenge.outbound.QuestionResponse;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -18,10 +18,10 @@ public class QuestionsService {
             .collect(Collectors.joining(", ")));
   }
 
-  public boolean validateQuestion(QuestionRequest questionRequest) {
-    int[] numbers = questionRequest.getNumbers();
+  public boolean validateQuestion(QuestionResponse questionResponse) {
+    int[] numbers = questionResponse.getNumbers();
     int sum = Arrays.stream(numbers).sum();
 
-    return sum == questionRequest.getAnswer();
+    return sum == questionResponse.getAnswer();
   }
 }

@@ -1,10 +1,10 @@
-package com.smartequip.challenge.inbound;
+package com.smartequip.challenge.outbound;
 
 import java.time.LocalDateTime;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class QuestionRequest {
+public class QuestionResponse {
 
   private String question;
   private int answer;
