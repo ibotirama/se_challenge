@@ -3,7 +3,6 @@
 ![Java](https://img.shields.io/badge/Java-17-orange.svg)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1.2-green.svg)
 ![Docker](https://img.shields.io/badge/Docker-20.10.21-blue.svg)
-![Build](https://github.com/ibotirama/se-challenge/User/actions/workflows/maven.yml/badge.svg)
 
 ## Table of Contents
 
