@@ -1,0 +1,6 @@
+spring:
+  application:
+    name=se-challenge
+jwt:
+  secret: a352ee21cc617b5f7f7168a3a8c986237d8512c6b8e3bca2de5e87ea75a63c38
+  expirationTime: 86400000

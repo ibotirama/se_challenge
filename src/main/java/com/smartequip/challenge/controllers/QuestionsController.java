@@ -1,5 +1,6 @@
 package com.smartequip.challenge.controllers;
 
+import com.smartequip.challenge.inbound.AnswerRequest;
 import com.smartequip.challenge.outbound.QuestionResponse;
 import com.smartequip.challenge.services.QuestionsService;
 import org.springframework.http.ResponseEntity;
@@ -18,12 +19,12 @@ public class QuestionsController {
   }
 
   @GetMapping("/questions")
-  public ResponseEntity<String> getQuestions() {
-    return ResponseEntity.ok(questionsService.getQuestions());
+  public ResponseEntity<QuestionResponse> getQuestions() {
+    return ResponseEntity.ok(questionsService.getQuestion());
   }
 
-  @PostMapping("/questions")
-  public ResponseEntity<?> validateQuestion(@RequestBody QuestionResponse questionResponse) {
+  @PostMapping("/answers")
+  public ResponseEntity<Object> validateQuestion(@RequestBody AnswerRequest questionResponse) {
     var isValid = questionsService.validateQuestion(questionResponse);
     return isValid ? ResponseEntity.ok().build() : ResponseEntity.badRequest().build();
   }
