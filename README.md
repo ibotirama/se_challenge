@@ -78,13 +78,14 @@ Then open /target/site/jacoco/index.html to see the coverage report.
  - The application is designed to be stateless, meaning that it does not store any session information on the server. This is achieved by encoding question data into a JSON Web Token (JWT) and sending it to the client. When the client submits an answer, the server decodes the JWT to verify the answer.
  - The application uses a simple in-memory repository to store the questions and answers. In a production environment, this would be replaced with a persistent data store.
  - Docker in two stages to have a smaller image size. The first stage builds the application using Maven, and the second stage copies the JAR file into a new image.
- - The application was not split in two separated services because it is too simple to be separated. In a future stage, it could be split in two services to improve scalability and performance if it can't handle a high demand.
- - On the validation if I wanted to control the exceptions, I could have a custom exception to control if the question is the same encoded in the token, or the answer was not correct. But I opted for simplicity just returning false in this case.
- - Decided to not test the JwtUtil class because it is a simple class and the tests would be redundant.
+ - The application was not split into two separate services because it is too simple to be separated. In the future, it could be split into two services to improve scalability and performance if it can't handle a high demand.
+ - On the validation, if I wanted to control the exceptions, I could have a custom exception to control if the question is the same encoded in the token, or the answer was not correct. But I opted for simplicity just returning false in this case.
+ - Decided not to test the JwtUtil class because it is a simple class and the tests would be redundant.
  - Decided to always return 3 numbers just by simplicity
 
 ## Feature enhancements
-  - Check if the token is expired - Forgot it initially :)
+  - Check if the token is expired - I forgot it initially :)
   - Add different operations to the questions and get it from the question when validating the answer.
   - Add resilience patterns like rate limiting, timeout, etc.
+  - Implement API documentation
 
