@@ -23,6 +23,8 @@
 
 **Check User** is a Java Spring Boot application that provides a simple API to generate sum questions with random numbers and validate the answers submitted by clients. The server is designed to be stateless by leveraging JSON Web Tokens (JWT) to encode question data, ensuring scalability and security without maintaining server-side state.
 
+<b>----> I posted the JWT secret on the configuration file just to get it running without any additional configuration, the default setup is to put it on environment variables to be set on CI/CD getting from a configuration vault.<b>
+
 ## Features
 
 - **Generate Sum Questions:** Provides clients with sum questions containing random numbers.
